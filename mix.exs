@@ -11,14 +11,9 @@ defmodule Jaxon.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
-      test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         "bench.encode": :bench,
-        "bench.decode": :bench,
-        coveralls: :test,
-        "coveralls.detail": :test,
-        "coveralls.post": :test,
-        "coveralls.html": :test
+        "bench.decode": :bench
       ],
       source_url: "https://github.com/boudra/jaxon",
       description: description(),
@@ -62,9 +57,7 @@ defmodule Jaxon.MixProject do
       {:jiffy, ">= 0.0.0", only: :bench},
       {:ex_doc, ">= 0.0.0", only: [:docs, :dev]},
       {:dialyxir, "~> 1.0.0-rc.7", only: [:test, :dev], runtime: false},
-      {:inch_ex, github: "rrrene/inch_ex", only: [:docs, :test]},
-      {:elixir_make, "~> 0.4", runtime: false},
-      {:excoveralls, "~> 0.8", only: :test}
+      {:elixir_make, "~> 0.4", runtime: false}
     ]
   end
 end
